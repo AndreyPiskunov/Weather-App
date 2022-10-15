@@ -14,6 +14,8 @@
 		CE28CE4F28F84658001B7893 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE28CE4E28F84658001B7893 /* Assets.xcassets */; };
 		CE28CE5228F84658001B7893 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE28CE5028F84658001B7893 /* LaunchScreen.storyboard */; };
 		CE28CE5B28F85595001B7893 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28CE5A28F85595001B7893 /* CityTableViewCell.swift */; };
+		CE28CE6428FABB07001B7893 /* CityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28CE6328FABB07001B7893 /* CityDetailViewController.swift */; };
+		CE28CE6628FABBFC001B7893 /* WeatherTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE28CE6528FABBFC001B7893 /* WeatherTabController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		CE28CE5128F84658001B7893 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE28CE5328F84658001B7893 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE28CE5A28F85595001B7893 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		CE28CE6328FABB07001B7893 /* CityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailViewController.swift; sourceTree = "<group>"; };
+		CE28CE6528FABBFC001B7893 /* WeatherTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTabController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +64,8 @@
 			children = (
 				CE28CE4528F84655001B7893 /* AppDelegate.swift */,
 				CE28CE4728F84655001B7893 /* SceneDelegate.swift */,
-				CE28CE5928F84E5D001B7893 /* Controller */,
+				CE28CE5E28FAB871001B7893 /* Model */,
+				CE28CE6028FAB9A4001B7893 /* Controllers */,
 				CE28CE5C28F98F33001B7893 /* View */,
 				CE28CE5028F84658001B7893 /* LaunchScreen.storyboard */,
 				CE28CE5328F84658001B7893 /* Info.plist */,
@@ -69,13 +74,13 @@
 			path = Weather;
 			sourceTree = "<group>";
 		};
-		CE28CE5928F84E5D001B7893 /* Controller */ = {
+		CE28CE5928F84E5D001B7893 /* CityVC */ = {
 			isa = PBXGroup;
 			children = (
 				CE28CE4928F84655001B7893 /* CityViewController.swift */,
 				CE28CE5A28F85595001B7893 /* CityTableViewCell.swift */,
 			);
-			path = Controller;
+			path = CityVC;
 			sourceTree = "<group>";
 		};
 		CE28CE5C28F98F33001B7893 /* View */ = {
@@ -84,6 +89,39 @@
 				CE28CE4B28F84655001B7893 /* Main.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CE28CE5E28FAB871001B7893 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CE28CE6028FAB9A4001B7893 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE28CE6128FAB9DA001B7893 /* TapBarController */,
+				CE28CE6228FABA5D001B7893 /* CityDetailVC */,
+				CE28CE5928F84E5D001B7893 /* CityVC */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CE28CE6128FAB9DA001B7893 /* TapBarController */ = {
+			isa = PBXGroup;
+			children = (
+				CE28CE6528FABBFC001B7893 /* WeatherTabController.swift */,
+			);
+			path = TapBarController;
+			sourceTree = "<group>";
+		};
+		CE28CE6228FABA5D001B7893 /* CityDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				CE28CE6328FABB07001B7893 /* CityDetailViewController.swift */,
+			);
+			path = CityDetailVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +199,8 @@
 				CE28CE4628F84655001B7893 /* AppDelegate.swift in Sources */,
 				CE28CE5B28F85595001B7893 /* CityTableViewCell.swift in Sources */,
 				CE28CE4828F84655001B7893 /* SceneDelegate.swift in Sources */,
+				CE28CE6628FABBFC001B7893 /* WeatherTabController.swift in Sources */,
+				CE28CE6428FABB07001B7893 /* CityDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
