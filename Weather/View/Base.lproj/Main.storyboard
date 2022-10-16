@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hov-d9-nES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Kr1-ck-aDL">
-                                <rect key="frame" x="0.0" y="92" width="414" height="721"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityCell" rowHeight="80" id="1bR-HP-OID" userLabel="CityCell" customClass="CityTableViewCell" customModule="Weather">
@@ -100,6 +100,21 @@
             </objects>
             <point key="canvasLocation" x="1027.536231884058" y="3.3482142857142856"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="K7h-to-vxH">
+            <objects>
+                <viewController id="f7w-9u-LsS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4nq-pV-QUx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6Ob-zt-JbB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n6B-Ux-eGe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1919" y="-455"/>
+        </scene>
         <!--City Detail View Controller-->
         <scene sceneID="cNo-IL-dtD">
             <objects>
@@ -114,41 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hhW-Hf-nEA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864" y="3"/>
-        </scene>
-        <!--Saved-->
-        <scene sceneID="tfp-qy-QVv">
-            <objects>
-                <viewController id="0d8-GP-9dN" userLabel="Saved" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="RGY-wa-ToO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="0Ff-9I-OGt"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Saved" image="bookmark.fill" catalog="system" id="cP6-n5-uSA" userLabel="Saved"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8nC-GU-ADD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="117" y="710"/>
-        </scene>
-        <!--Weather Tab Controller-->
-        <scene sceneID="fvN-jw-0b1">
-            <objects>
-                <tabBarController id="Hov-d9-nES" customClass="WeatherTabController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gcx-91-5SJ">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="Wde-yd-zCk" kind="relationship" relationship="viewControllers" id="2la-uf-2aH"/>
-                        <segue destination="0d8-GP-9dN" kind="relationship" relationship="viewControllers" id="eea-vg-ftx"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fho-T2-9Px" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1082" y="320"/>
+            <point key="canvasLocation" x="1920" y="226"/>
         </scene>
         <!--General-->
         <scene sceneID="ogW-LM-FwD">
@@ -171,7 +152,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bookmark.fill" catalog="system" width="110" height="128"/>
         <image name="globe" catalog="system" width="128" height="123"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
