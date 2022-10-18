@@ -12,8 +12,8 @@ class CityViewController: UIViewController {
     @IBOutlet weak var cityTable: UITableView!
     
     var weatherManager = WeatherManager()
-    var cityNames = ["Moscow","London"] //Presaved queries
-    var displayWeather:[WeatherModel] = [] // Fetched data for TableViews
+    var cityNames = ["Moscow","Nizhny Tagil","Sochi","Ekaterinburg"] //Presaved queries
+    var displayWeather:[WeatherModel] = [] // Fetched data for display in TableViews
     
     //MARK: Life cycle
     override func viewDidLoad() {
@@ -21,18 +21,24 @@ class CityViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         cityTable.contentInset.top = 10//Space before the first cell
-        
         weatherManager.delegate = self
         
-        for cityName in cityNames {
-            weatherManager.fetchWeather(cityName: cityName)
-        }
+        fetchWeatherData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationController?.hidesBarsOnSwipe = true
+    }
+    //Helper functions
+    func fetchWeatherData() {
+        for cityName in cityNames {
+            weatherManager.fetchWeather(cityName: cityName)
+            let blankWeather = WeatherModel(conditionId: 0, cityName: cityName, temperature: 0)
+            
+            displayWeather.append(blankWeather)
+        }
     }
 }
 
@@ -63,12 +69,17 @@ extension CityViewController: UITableViewDelegate, UITableViewDataSource {
 extension CityViewController: WeatherManagerDelegate {
     
     func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
-        displayWeather.append(weather)
         
-        DispatchQueue.main.sync {
+        DispatchQueue.main.async {
+            
+            //Find weather index and refresh its data
+            for (i,cityName) in self.cityNames.enumerated() {
+                if cityName == weather.cityName {
+                    self.displayWeather[i] = weather
+                }
+            }
             self.cityTable.reloadData()
         }
-        
     }
     
     func didFailWithError(error: Error) {
