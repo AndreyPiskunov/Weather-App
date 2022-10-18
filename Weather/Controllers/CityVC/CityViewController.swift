@@ -8,15 +8,26 @@
 import UIKit
 
 class CityViewController: UIViewController {
-
+    
+    @IBOutlet weak var cityTable: UITableView!
+    
+    var weatherManager = WeatherManager()
+    
     //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        cityTable.contentInset.top = 10//Space before the first cell
+        
+        weatherManager.delegate = self
+        weatherManager.fetchWeather(cityName: "Moscow")
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        navigationController?.hidesBarsOnSwipe = true
     }
 }
 
@@ -38,6 +49,16 @@ extension CityViewController: UITableViewDelegate, UITableViewDataSource {
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
+}
+
+extension CityViewController: WeatherManagerDelegate {
     
+    func didUpdateWeather(_ weatherManager: WeatherManager, weather: WeatherModel) {
+        print(weather)
+    }
+    
+    func didFailWithError(error: Error) {
+        fatalError("Failed with - \(error)")
+    }
 }
 
