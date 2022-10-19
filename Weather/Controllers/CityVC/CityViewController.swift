@@ -13,7 +13,6 @@ class CityViewController: UIViewController {
     @IBOutlet weak var currentDateLabel: UILabel!
     
     var refreshControl = UIRefreshControl()//refreshing of a scroll view’s contents
-    
     var weatherManager = WeatherManager()
     var cityNames = ["Moscow","Nizhny Tagil","Sochi","Ekaterinburg"] //Presaved queries
     var displayWeather:[WeatherModel] = [] // Fetched data for display in TableViews
@@ -22,15 +21,15 @@ class CityViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       //Settings for current date label
+        //Settings for current date label
         let currentDate = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE dd MMMM"
         let result = dateFormatter.string(from: currentDate)
         currentDateLabel.text = result
         
-        
-        cityTable.contentInset.top = 10//Space before the first cell
+        //Space before the first cell
+        cityTable.contentInset.top = 10
         
         weatherManager.delegate = self
         
@@ -41,6 +40,7 @@ class CityViewController: UIViewController {
         fetchWeatherData()
     }
     
+    //Refresh tableview
     @objc func refreshWeatherData(_ sender: AnyObject){
         fetchWeatherData()
         refreshControl.endRefreshing()//Tells refresh operation has ended
@@ -52,7 +52,7 @@ class CityViewController: UIViewController {
         
         for cityName in cityNames {
             weatherManager.fetchWeather(cityName: cityName)
-            let blankWeather = WeatherModel(conditionId: 0, cityName: cityName, temperature: 0)
+            let blankWeather = WeatherModel(conditionId: 0, cityName: cityName, temperature: 0, timezone: 0)
             
             displayWeather.append(blankWeather)
         }
@@ -66,11 +66,22 @@ extension CityViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "CityCell") as! CityTableViewCell
         
+        let weatherDataForCell = displayWeather[indexPath.row]
+        
+        
         // Populate the cell with data
-        cell.cityNameLabel.text = displayWeather[indexPath.row].cityName
-        cell.degreeLabel.text = displayWeather[indexPath.row].weatherTemperature
+        cell.cityNameLabel.text = weatherDataForCell.cityName
+        cell.degreeLabel.text = weatherDataForCell.weatherTemperature
+        
+        //Settings for current time label
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: weatherDataForCell.timezone)
+        dateFormatter.dateFormat = "HH:mm"
+        cell.cityTimeLabel.text = dateFormatter.string(from: date)
         
         return cell
     }
@@ -103,4 +114,3 @@ extension CityViewController: WeatherManagerDelegate {
         fatalError("Failed with - \(error)")
     }
 }
-

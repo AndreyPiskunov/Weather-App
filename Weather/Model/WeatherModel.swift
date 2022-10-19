@@ -11,6 +11,7 @@ struct WeatherModel {
     let conditionId: Int
     let cityName: String
     let temperature: Double
+    let timezone: Int
     
     var weatherTemperature: String {
     String(format: "%.0f°", temperature)

@@ -64,7 +64,8 @@ struct WeatherManager {
             
             let weather = WeatherModel(conditionId: decodedData.weather[0].id,
                                        cityName: decodedData.name,
-                                       temperature: decodedData.main.temp)
+                                       temperature: decodedData.main.temp,
+                                       timezone: decodedData.timezone)
                 //Create weather object
             
             return weather
