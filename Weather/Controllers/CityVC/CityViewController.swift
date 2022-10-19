@@ -11,6 +11,8 @@ class CityViewController: UIViewController {
     
     @IBOutlet weak var cityTable: UITableView!
     
+    var refreshControl = UIRefreshControl()//refreshing of a scroll view’s contents
+    
     var weatherManager = WeatherManager()
     var cityNames = ["Moscow","Nizhny Tagil","Sochi","Ekaterinburg"] //Presaved queries
     var displayWeather:[WeatherModel] = [] // Fetched data for display in TableViews
@@ -21,18 +23,25 @@ class CityViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         cityTable.contentInset.top = 10//Space before the first cell
+        
         weatherManager.delegate = self
         
+        //Refresh control settings
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.refreshWeatherData), for: .valueChanged)
+        cityTable.addSubview(refreshControl)
         fetchWeatherData()
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.hidesBarsOnSwipe = true
+    
+    @objc func refreshWeatherData(_ sender: AnyObject){
+        fetchWeatherData()
+        refreshControl.endRefreshing()//Tells refresh operation has ended
     }
+    
     //Helper functions
     func fetchWeatherData() {
+        displayWeather.removeAll()
+        
         for cityName in cityNames {
             weatherManager.fetchWeather(cityName: cityName)
             let blankWeather = WeatherModel(conditionId: 0, cityName: cityName, temperature: 0)
