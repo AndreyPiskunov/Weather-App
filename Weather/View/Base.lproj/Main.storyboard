@@ -24,16 +24,16 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OoU-ga-Stx">
-                                            <rect key="frame" x="15" y="-2" width="146" height="41"/>
+                                            <rect key="frame" x="15" y="-8" width="183.5" height="47"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday 16 October" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hf-lE-V1H" userLabel="Date">
-                                                    <rect key="frame" x="0.0" y="0.0" width="146" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="183.5" height="26.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TR7-1O-bOf" userLabel="DayWeek">
-                                                    <rect key="frame" x="0.0" y="20.5" width="146" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="26.5" width="183.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -41,7 +41,7 @@
                                             </subviews>
                                         </stackView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeR-AI-qmm" userLabel="AddButton">
-                                            <rect key="frame" x="369" y="3.5" width="30" height="30"/>
+                                            <rect key="frame" x="369" y="0.5" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="W4k-dU-PZ0"/>
                                                 <constraint firstAttribute="width" constant="30" id="beH-VP-8bb"/>
@@ -144,6 +144,7 @@
                     <navigationItem key="navigationItem" id="WdY-yM-aft"/>
                     <connections>
                         <outlet property="cityTable" destination="Kr1-ck-aDL" id="Dub-V3-FL8"/>
+                        <outlet property="currentDateLabel" destination="1Hf-lE-V1H" id="JCY-Lc-R1v"/>
                         <segue destination="GSu-op-415" kind="show" identifier="showCityDetailVC" id="Vjj-IX-uhH"/>
                     </connections>
                 </viewController>

@@ -10,6 +10,7 @@ import UIKit
 class CityViewController: UIViewController {
     
     @IBOutlet weak var cityTable: UITableView!
+    @IBOutlet weak var currentDateLabel: UILabel!
     
     var refreshControl = UIRefreshControl()//refreshing of a scroll view’s contents
     
@@ -20,7 +21,14 @@ class CityViewController: UIViewController {
     //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+       //Settings for current date label
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE dd MMMM"
+        let result = dateFormatter.string(from: currentDate)
+        currentDateLabel.text = result
+        
         
         cityTable.contentInset.top = 10//Space before the first cell
         
