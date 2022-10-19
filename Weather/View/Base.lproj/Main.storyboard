@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Kr1-ck-aDL" userLabel="City Table">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Kr1-ck-aDL" userLabel="City Table">
                                 <rect key="frame" x="0.0" y="92" width="414" height="770"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="UUi-Bc-PTa">
@@ -67,7 +67,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iqb-n5-QvS">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iqb-n5-QvS" userLabel="WeatherBackground">
                                                     <rect key="frame" x="15" y="5" width="384" height="70"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hSy-kR-zyp">
@@ -123,6 +123,7 @@
                                             <outlet property="cityNameLabel" destination="cJQ-l6-HAw" id="8wW-qs-JjP"/>
                                             <outlet property="cityTimeLabel" destination="Ouk-Gi-GgO" id="k2E-oC-epk"/>
                                             <outlet property="degreeLabel" destination="2nd-Ws-XGS" id="W9F-h1-eau"/>
+                                            <outlet property="weatherBackgroundView" destination="iqb-n5-QvS" id="g9b-xQ-S2u"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
