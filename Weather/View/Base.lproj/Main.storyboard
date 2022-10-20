@@ -24,16 +24,16 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OoU-ga-Stx">
-                                            <rect key="frame" x="15" y="-8" width="183.5" height="47"/>
+                                            <rect key="frame" x="15" y="-3" width="154" height="42"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunday 16 October" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Hf-lE-V1H" userLabel="Date">
-                                                    <rect key="frame" x="0.0" y="0.0" width="183.5" height="26.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="154" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TR7-1O-bOf" userLabel="DayWeek">
-                                                    <rect key="frame" x="0.0" y="26.5" width="183.5" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="21.5" width="154" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -41,7 +41,7 @@
                                             </subviews>
                                         </stackView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZeR-AI-qmm" userLabel="AddButton">
-                                            <rect key="frame" x="369" y="0.5" width="30" height="30"/>
+                                            <rect key="frame" x="369" y="3" width="30" height="30"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="30" id="W4k-dU-PZ0"/>
                                                 <constraint firstAttribute="width" constant="30" id="beH-VP-8bb"/>
@@ -175,8 +175,22 @@
                     <view key="view" contentMode="scaleToFill" id="rCi-HS-BCo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pZc-7W-qbh">
+                                <rect key="frame" x="169.5" y="459.5" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Return"/>
+                                <connections>
+                                    <action selector="exitButtonPressed:" destination="GSu-op-415" eventType="touchUpInside" id="6sg-Tw-glC"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="KVA-mK-KXV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pZc-7W-qbh" firstAttribute="centerX" secondItem="KVA-mK-KXV" secondAttribute="centerX" id="TyP-2Y-Ziv"/>
+                            <constraint firstItem="pZc-7W-qbh" firstAttribute="centerY" secondItem="KVA-mK-KXV" secondAttribute="centerY" id="vdm-0h-FMd"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xdm-w0-hkb"/>
                 </viewController>
