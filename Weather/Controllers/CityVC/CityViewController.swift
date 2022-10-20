@@ -12,6 +12,7 @@ class CityViewController: UIViewController {
     @IBOutlet weak var cityTable: UITableView!
     @IBOutlet weak var currentDateLabel: UILabel!
     
+    let fadeTransitionAnimator = FadeTransitionAnimator()
     var refreshControl = UIRefreshControl()//refreshing of a scroll view’s contents
     var weatherManager = WeatherManager()
     var cityNames = ["Moscow","Nizhny Tagil","Sochi","Ekaterinburg"] //Presaved queries
@@ -20,6 +21,8 @@ class CityViewController: UIViewController {
     //MARK: Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.delegate = self
         
         //Settings for current date label
         let currentDate = Date()
@@ -77,7 +80,6 @@ extension CityViewController: UITableViewDelegate, UITableViewDataSource {
         
         let weatherDataForCell = displayWeather[indexPath.row]
         
-        
         // Populate the cell with data
         cell.cityNameLabel.text = weatherDataForCell.cityName
         cell.degreeLabel.text = weatherDataForCell.weatherTemperature
@@ -130,5 +132,14 @@ extension CityViewController: WeatherManagerDelegate {
     
     func didFailWithError(error: Error) {
         fatalError("Failed with - \(error)")
+    }
+}
+extension CityViewController: UINavigationControllerDelegate, UIViewControllerTransitioningDelegate {
+    func navigationController(_ navigationController: UINavigationController,
+                              animationControllerFor operation: UINavigationController.Operation,
+                              from fromVC: UIViewController,
+                              to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        return fadeTransitionAnimator
     }
 }
