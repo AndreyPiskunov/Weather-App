@@ -16,7 +16,7 @@ class CityViewController: UIViewController {
     var refreshControl = UIRefreshControl()//refreshing of a scroll view’s contents
     var weatherManager = WeatherManager()
     var cityNames = ["Moscow","Nizhny Tagil","Sochi","Ekaterinburg"] //Presaved queries
-    var displayWeather:[WeatherModel] = [] // Fetched data for display in TableViews
+    var displayWeather: [WeatherModel] = [] // Fetched data for display in TableViews
     
     //MARK: Life cycle
     override func viewDidLoad() {

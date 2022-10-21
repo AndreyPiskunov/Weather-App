@@ -17,17 +17,13 @@ class CityDetailViewController: UIViewController {
     
     @IBAction func exitButtonPressed(_ sender: Any) {
         
-        self.navigationController?.popViewController(animated: true)
+        let testM = CityManager()
+        let cityList = testM.getCityList()!
+        
+        for city in cityList {
+            print(city.cityName)
+        }
+        print (cityList.count)
+        //        self.navigationController?.popViewController(animated: true)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

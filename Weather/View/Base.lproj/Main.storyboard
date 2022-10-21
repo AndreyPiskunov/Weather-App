@@ -171,7 +171,7 @@
         <!--City Detail View Controller-->
         <scene sceneID="cNo-IL-dtD">
             <objects>
-                <viewController id="GSu-op-415" customClass="CityDetailViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GSu-op-415" customClass="CityDetailViewController" customModule="Weather" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rCi-HS-BCo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
