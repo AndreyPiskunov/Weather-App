@@ -24,6 +24,7 @@
 		CE56C98129027E490039AC47 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56C98029027E490039AC47 /* CityModel.swift */; };
 		CE56C98329027EE90039AC47 /* CityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56C98229027EE90039AC47 /* CityData.swift */; };
 		CE56C98529027F040039AC47 /* CityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56C98429027F040039AC47 /* CityManager.swift */; };
+		CE56C9882903DF1F0039AC47 /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56C9872903DF1F0039AC47 /* AddCityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		CE56C98029027E490039AC47 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
 		CE56C98229027EE90039AC47 /* CityData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityData.swift; sourceTree = "<group>"; };
 		CE56C98429027F040039AC47 /* CityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityManager.swift; sourceTree = "<group>"; };
+		CE56C9872903DF1F0039AC47 /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		CE28CE6028FAB9A4001B7893 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE56C9862903DE980039AC47 /* AddCityVC */,
 				CE28CE6128FAB9DA001B7893 /* TapBarController */,
 				CE28CE6228FABA5D001B7893 /* CityDetailVC */,
 				CE28CE5928F84E5D001B7893 /* CityVC */,
@@ -162,6 +165,14 @@
 				CE56C98429027F040039AC47 /* CityManager.swift */,
 			);
 			path = CitiesData;
+			sourceTree = "<group>";
+		};
+		CE56C9862903DE980039AC47 /* AddCityVC */ = {
+			isa = PBXGroup;
+			children = (
+				CE56C9872903DF1F0039AC47 /* AddCityViewController.swift */,
+			);
+			path = AddCityVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +248,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE56C98329027EE90039AC47 /* CityData.swift in Sources */,
+				CE56C9882903DF1F0039AC47 /* AddCityViewController.swift in Sources */,
 				CE56C98529027F040039AC47 /* CityManager.swift in Sources */,
 				CE28CE4A28F84655001B7893 /* CityViewController.swift in Sources */,
 				CE56C98129027E490039AC47 /* CityModel.swift in Sources */,

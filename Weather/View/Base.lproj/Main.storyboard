@@ -49,6 +49,9 @@
                                             <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system" buttonSize="large"/>
+                                            <connections>
+                                                <segue destination="f7w-9u-LsS" kind="presentation" id="x61-B2-P9c"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -153,20 +156,72 @@
             </objects>
             <point key="canvasLocation" x="1027.536231884058" y="3.3482142857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Add City View Controller-->
         <scene sceneID="K7h-to-vxH">
             <objects>
-                <viewController id="f7w-9u-LsS" sceneMemberID="viewController">
+                <viewController id="f7w-9u-LsS" customClass="AddCityViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4nq-pV-QUx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nu8-Tt-fW6">
+                                <rect key="frame" x="0.0" y="48" width="414" height="102.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="c2M-z0-lz3">
+                                        <rect key="frame" x="20" y="5" width="374" height="92.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the name of the city" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzy-f8-8ht">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" red="0.17565176996988119" green="0.17565176996988119" blue="0.17565176996988119" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W6d-Jx-hGB">
+                                                <rect key="frame" x="0.0" y="36.5" width="374" height="56"/>
+                                                <subviews>
+                                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="GLY-s0-CYo">
+                                                        <rect key="frame" x="0.0" y="0.0" width="297.5" height="56"/>
+                                                        <textInputTraits key="textInputTraits" textContentType="address-level2"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="f7w-9u-LsS" id="RzH-py-R7g"/>
+                                                        </connections>
+                                                    </searchBar>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NCo-qt-1s1">
+                                                        <rect key="frame" x="297.5" y="0.0" width="76.5" height="56"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Cancel">
+                                                            <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="cancelButtonPressed:" destination="f7w-9u-LsS" eventType="touchUpInside" id="hYY-Mf-iHV"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.87635205455662046" green="0.87635205455662046" blue="0.87635205455662046" alpha="0.75178548592288474" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="c2M-z0-lz3" secondAttribute="bottom" constant="5" id="6lh-wO-kS4"/>
+                                    <constraint firstItem="c2M-z0-lz3" firstAttribute="leading" secondItem="nu8-Tt-fW6" secondAttribute="leading" constant="20" id="dSk-uB-uen"/>
+                                    <constraint firstItem="c2M-z0-lz3" firstAttribute="top" secondItem="nu8-Tt-fW6" secondAttribute="top" constant="5" id="ur8-b9-lCF"/>
+                                    <constraint firstAttribute="trailing" secondItem="c2M-z0-lz3" secondAttribute="trailing" constant="20" id="whR-gI-NGZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Ob-zt-JbB"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nu8-Tt-fW6" firstAttribute="top" secondItem="6Ob-zt-JbB" secondAttribute="top" id="7wh-8O-KmG"/>
+                            <constraint firstItem="nu8-Tt-fW6" firstAttribute="leading" secondItem="6Ob-zt-JbB" secondAttribute="leading" id="UwO-iA-Tav"/>
+                            <constraint firstItem="nu8-Tt-fW6" firstAttribute="trailing" secondItem="6Ob-zt-JbB" secondAttribute="trailing" id="VRZ-uZ-fzl"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6B-Ux-eGe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1919" y="-455"/>
+            <point key="canvasLocation" x="1918.840579710145" y="-455.35714285714283"/>
         </scene>
         <!--City Detail View Controller-->
         <scene sceneID="cNo-IL-dtD">
