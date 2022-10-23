@@ -167,6 +167,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nu8-Tt-fW6">
                                 <rect key="frame" x="0.0" y="48" width="414" height="102.5"/>
                                 <subviews>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qaJ-Re-Buq">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="102.5"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Wsg-34-TNh">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="102.5"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </view>
+                                        <blurEffect style="systemThinMaterialLight"/>
+                                    </visualEffectView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="c2M-z0-lz3">
                                         <rect key="frame" x="20" y="5" width="374" height="92.5"/>
                                         <subviews>
@@ -204,20 +212,39 @@
                                 <color key="backgroundColor" red="0.87635205455662046" green="0.87635205455662046" blue="0.87635205455662046" alpha="0.75178548592288474" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="c2M-z0-lz3" secondAttribute="bottom" constant="5" id="6lh-wO-kS4"/>
+                                    <constraint firstItem="qaJ-Re-Buq" firstAttribute="top" secondItem="nu8-Tt-fW6" secondAttribute="top" id="RPy-Pz-4Eo"/>
+                                    <constraint firstItem="qaJ-Re-Buq" firstAttribute="leading" secondItem="nu8-Tt-fW6" secondAttribute="leading" id="Xag-wo-Wd4"/>
                                     <constraint firstItem="c2M-z0-lz3" firstAttribute="leading" secondItem="nu8-Tt-fW6" secondAttribute="leading" constant="20" id="dSk-uB-uen"/>
+                                    <constraint firstAttribute="bottom" secondItem="qaJ-Re-Buq" secondAttribute="bottom" id="sMn-us-5Ld"/>
                                     <constraint firstItem="c2M-z0-lz3" firstAttribute="top" secondItem="nu8-Tt-fW6" secondAttribute="top" constant="5" id="ur8-b9-lCF"/>
+                                    <constraint firstAttribute="trailing" secondItem="qaJ-Re-Buq" secondAttribute="trailing" id="vpG-9e-6gF"/>
                                     <constraint firstAttribute="trailing" secondItem="c2M-z0-lz3" secondAttribute="trailing" constant="20" id="whR-gI-NGZ"/>
                                 </constraints>
                             </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ap2-o2-yfA">
+                                <rect key="frame" x="0.0" y="150.5" width="414" height="687.5"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iGR-Dr-szd">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="687.5"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="systemChromeMaterialDark"/>
+                            </visualEffectView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Ob-zt-JbB"/>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="0.083048917809311229" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="nu8-Tt-fW6" firstAttribute="top" secondItem="6Ob-zt-JbB" secondAttribute="top" id="7wh-8O-KmG"/>
-                            <constraint firstItem="nu8-Tt-fW6" firstAttribute="leading" secondItem="6Ob-zt-JbB" secondAttribute="leading" id="UwO-iA-Tav"/>
-                            <constraint firstItem="nu8-Tt-fW6" firstAttribute="trailing" secondItem="6Ob-zt-JbB" secondAttribute="trailing" id="VRZ-uZ-fzl"/>
+                            <constraint firstItem="nu8-Tt-fW6" firstAttribute="top" secondItem="6Ob-zt-JbB" secondAttribute="top" id="M3b-Ng-piY"/>
+                            <constraint firstAttribute="bottom" secondItem="ap2-o2-yfA" secondAttribute="bottom" id="d1g-on-a7U"/>
+                            <constraint firstItem="ap2-o2-yfA" firstAttribute="top" secondItem="nu8-Tt-fW6" secondAttribute="bottom" id="dxf-bz-cqt"/>
+                            <constraint firstItem="6Ob-zt-JbB" firstAttribute="trailing" secondItem="ap2-o2-yfA" secondAttribute="trailing" id="ebr-Jo-PPd"/>
+                            <constraint firstItem="nu8-Tt-fW6" firstAttribute="leading" secondItem="6Ob-zt-JbB" secondAttribute="leading" id="eyV-K4-Teu"/>
+                            <constraint firstItem="ap2-o2-yfA" firstAttribute="leading" secondItem="6Ob-zt-JbB" secondAttribute="leading" id="iBP-xq-7Vv"/>
+                            <constraint firstItem="6Ob-zt-JbB" firstAttribute="trailing" secondItem="nu8-Tt-fW6" secondAttribute="trailing" id="yf4-vM-5UN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchBar" destination="GLY-s0-CYo" id="Dfx-oD-fTz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n6B-Ux-eGe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
