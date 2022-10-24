@@ -10,6 +10,7 @@ import UIKit
 class AddCityViewController: UIViewController {
     
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var resultsSearchTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

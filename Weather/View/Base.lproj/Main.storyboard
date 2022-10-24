@@ -226,6 +226,18 @@
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iGR-Dr-szd">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="687.5"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5Gl-9k-QPV">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="687.5"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        </tableView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="5Gl-9k-QPV" firstAttribute="top" secondItem="iGR-Dr-szd" secondAttribute="top" id="Esh-ct-p0S"/>
+                                        <constraint firstAttribute="trailing" secondItem="5Gl-9k-QPV" secondAttribute="trailing" id="GHl-RD-wHs"/>
+                                        <constraint firstItem="5Gl-9k-QPV" firstAttribute="leading" secondItem="iGR-Dr-szd" secondAttribute="leading" id="Rke-9i-l3Q"/>
+                                        <constraint firstAttribute="bottom" secondItem="5Gl-9k-QPV" secondAttribute="bottom" id="krV-s4-SVW"/>
+                                    </constraints>
                                 </view>
                                 <blurEffect style="systemChromeMaterialDark"/>
                             </visualEffectView>
@@ -243,6 +255,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="resultsSearchTable" destination="5Gl-9k-QPV" id="WKx-iU-pFX"/>
                         <outlet property="searchBar" destination="GLY-s0-CYo" id="Dfx-oD-fTz"/>
                     </connections>
                 </viewController>
