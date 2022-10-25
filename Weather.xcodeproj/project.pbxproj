@@ -25,6 +25,7 @@
 		CE56C98329027EE90039AC47 /* CityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56C98229027EE90039AC47 /* CityData.swift */; };
 		CE56C98529027F040039AC47 /* CityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56C98429027F040039AC47 /* CityManager.swift */; };
 		CE56C9882903DF1F0039AC47 /* AddCityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE56C9872903DF1F0039AC47 /* AddCityViewController.swift */; };
+		CE81D4F62907BA5C008AAD38 /* CityListDBCreator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE81D4F42907BA5C008AAD38 /* CityListDBCreator.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		CE56C98229027EE90039AC47 /* CityData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityData.swift; sourceTree = "<group>"; };
 		CE56C98429027F040039AC47 /* CityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityManager.swift; sourceTree = "<group>"; };
 		CE56C9872903DF1F0039AC47 /* AddCityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCityViewController.swift; sourceTree = "<group>"; };
+		CE81D4F52907BA5C008AAD38 /* CityListDBCreator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CityListDBCreator.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				CE28CE5028F84658001B7893 /* LaunchScreen.storyboard */,
 				CE28CE5328F84658001B7893 /* Info.plist */,
 				CE28CE4E28F84658001B7893 /* Assets.xcassets */,
+				CE81D4F42907BA5C008AAD38 /* CityListDBCreator.xcdatamodeld */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				CE56C98329027EE90039AC47 /* CityData.swift in Sources */,
 				CE56C9882903DF1F0039AC47 /* AddCityViewController.swift in Sources */,
 				CE56C98529027F040039AC47 /* CityManager.swift in Sources */,
+				CE81D4F62907BA5C008AAD38 /* CityListDBCreator.xcdatamodeld in Sources */,
 				CE28CE4A28F84655001B7893 /* CityViewController.swift in Sources */,
 				CE56C98129027E490039AC47 /* CityModel.swift in Sources */,
 				CE28CE4628F84655001B7893 /* AppDelegate.swift in Sources */,
@@ -478,6 +482,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CE81D4F42907BA5C008AAD38 /* CityListDBCreator.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CE81D4F52907BA5C008AAD38 /* CityListDBCreator.xcdatamodel */,
+			);
+			currentVersion = CE81D4F52907BA5C008AAD38 /* CityListDBCreator.xcdatamodel */;
+			path = CityListDBCreator.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CE28CE3A28F84655001B7893 /* Project object */;
 }
